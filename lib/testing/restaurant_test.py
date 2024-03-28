@@ -20,26 +20,22 @@ class TestRestaurant:
         assert restaurant.name == "Mel'b"
         assert isinstance(restaurant.name, str)
 
-        # comment out the next two lines if using Exceptions
+        
         restaurant.name = 4
         assert restaurant.name == "Mel'b"
 
-        # uncomment the next two lines if using Exceptions
-        # with pytest.raises(Exception):
-        #     Restaurant(1)
+        
 
     def test_name_is_valid(self):
         """name must be 1 or more characters long"""
         restaurant = Restaurant("Mel's")
         assert len(restaurant.name) > 0
         
-        # comment the next two lines if using Exceptions
+       
         restaurant.name = ""
         assert restaurant.name == "Mel's"
 
-        # uncomment the next two lines if using Exceptions
-        # with pytest.raises(Exception):
-        #     Restaurant("")
+        
 
     def test_has_many_reviews(self):
         """restaurant has many reviews"""
@@ -112,7 +108,7 @@ class TestRestaurant:
         Review(customer_2, restaurant, 5)
         Review(customer_2, restaurant, 4)
 
-        # rounds the result to 1 decimal place
+        
         assert restaurant.average_star_rating() == 3.7
 
     def test_top_two_restaurants(self):

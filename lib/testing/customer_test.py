@@ -26,13 +26,7 @@ class TestCustomer:
         assert customer_1.first_name == "Rob"
         assert customer_1.last_name == "Stark"
 
-        # uncomment the next two lines if using Exceptions
-        # with pytest.raises(Exception):
-        #     customer_1.last_name = 3
-
-        # uncomment the next two lines if using Exceptions
-        # with pytest.raises(Exception):
-        #     customer_1.first_name = 3
+       
 
     def test_names_are_valid(self):
         """first and last names must be between 1 and 25 characters, inclusive"""
@@ -41,7 +35,7 @@ class TestCustomer:
         assert 1 <= len(customer.first_name) <= 25
         assert 1 <= len(customer.last_name) <= 25
 
-        # comment out the next four lines if using Exceptions
+       
         customer.first_name = "F" * 26
         customer.first_name = ""
         customer.last_name = "F" * 26
@@ -49,21 +43,7 @@ class TestCustomer:
         assert customer.first_name == "Steve"
         assert customer.last_name == "Wayne"
 
-        # uncomment the next two lines if using Exceptions
-        # with pytest.raises(Exception):
-        #     Customer('', 'Lastname')
-
-        # uncomment the next two lines if using Exceptions
-        # with pytest.raises(Exception):
-        #     Customer('Firstname', '')
-
-        # uncomment the next two lines if using Exceptions
-        # with pytest.raises(Exception):
-        #     Customer('F' * 26, 'Lastname')
-
-        # uncomment the next two lines if using Exceptions
-        # with pytest.raises(Exception):
-        #     Customer('Firstname', 'L' * 26)
+        
 
     def test_has_many_reviews(self):
         """customer has many reviews"""
